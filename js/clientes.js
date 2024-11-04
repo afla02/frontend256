@@ -15,7 +15,7 @@ function mostrarClientes() {
                 <td>${element.direccion}</td>
                 <td>
                     <button type="button" class="btn btn-primary" onclick='window.location = "/formClientes.html?id=${element._id}"'>Editar</button>
-                    <button type="button" class="btn btn-danger" onclick='confirmarEliminar("${element._id}")'>Eliminar</button>
+                    <button type="button" class="btn btn-danger" onclick="confirmarEliminar('${element._id}')">Eliminar</button>
                 </td>
             </tr>
         `;
