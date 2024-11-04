@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Inicio</title>
+    <style>
+        /* Estilos adicionales */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa; /* Color de fondo de clientes.html */
+            color: #343a40; /* Color principal de texto */
+        }
+    
+        header {
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+    
+        .navbar {
+            background-color: #5A6268; /* Color principal del navbar */
+        }
+    
+        .navbar-brand,
+        .nav-link {
+            color: #ffffff !important;
+        }
+    
+        .navbar-brand:hover,
+        .nav-link:hover {
+            color: #adb5bd !important;
+        }
+    
+        .navbar-toggler {
+            border-color: #ffffff;
+        }
+    
+        .welcome-section,
+        .updates-section,
+        .testimonials-section,
+        .contact-section {
+            padding: 60px 0;
+            text-align: center;
+        }
+    
+        .welcome-section {
+            background-color: #e2e3e5; /* Color de fondo de bienvenida */
+        }
+    
+        .modules-section {
+            padding: 40px 0;
+        }
+    
+        .card {
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            background-color: #f8f9fa; /* Color de fondo de las tarjetas */
+        }
+    
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+    
+        .footer {
+            background-color: #5A6268; /* Color principal del pie de página */
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+        }
+    
+        /* Colores intercalados para las tarjetas */
+        .card:nth-child(odd) {
+            background-color: #98FF98; /* Verde menta */
+        }
+    
+        .card:nth-child(even) {
+            background-color: #00BFFF; /* Aqua */
+        }
+    
+        /* Botones */
+        .btn-outline-dark {
+            color: #343a40;
+            border-color: #343a40;
+        }
+    
+        .btn-outline-dark:hover {
+            background-color: #343a40;
+            color: #ffffff;
+        }
+    
+        /* Estilo para las imágenes de las tarjetas */
+        .card-img-top {
+            height: 200px; /* Altura fija para las imágenes */
+            object-fit: cover; /* Asegura que la imagen cubra el área */
+        }
+    
+        /* Fondo para las secciones */
+        .updates-section {
+            background-image: url('ruta/a/tu/fondo.jpg'); /* Imagen de fondo */
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <!-- Sección de Bienvenida -->
+    <section class="welcome-section">
+        <div class="container">
+            <h1>Bienvenido a Nuestro Sistema</h1>
+            <p>Administra tus clientes y productos de manera sencilla y rápida.</p>
+        </div>
+    </section>
+
+    <!-- Sección de Módulos -->
+    <section class="modules-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <img src="https://www.shutterstock.com/image-photo/customer-satisfaction-survey-concept-users-600nw-2476248065.jpg" class="card-img-top" alt="Clientes">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-users"></i> Clientes</h5>
+                            <p class="card-text">Gestiona información y detalles de tus clientes de forma eficiente.</p>
+                            <a href="clientes.html" class="btn btn-outline-dark">Ir a Clientes</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <img src="https://emprendepyme.net/wp-content/uploads/2023/03/cualidades-producto.jpg" class="card-img-top" alt="Productos">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-box"></i> Productos</h5>
+                            <p class="card-text">Administra tu inventario y detalles de los productos que ofreces.</p>
+                            <a href="productos.html" class="btn btn-outline-dark">Ir a Productos</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Últimas Noticias o Actualizaciones -->
+    <section class="updates-section bg-light">
+        <div class="container">
+            <h2>Últimas Noticias</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Nueva Funcionalidad</h5>
+                            <p class="card-text">Hemos lanzado una nueva herramienta para mejorar la gestión de inventarios.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Capacitación Gratuita</h5>
+                            <p class="card-text">Apúntate a nuestras sesiones de capacitación en línea para mejorar tus habilidades.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Descuentos Especiales</h5>
+                            <p class="card-text">Aprovecha descuentos especiales en módulos avanzados por tiempo limitado.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Testimonios -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2>Opiniones de Nuestros Clientes</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <blockquote class="blockquote">
+                                <p>"Excelente plataforma, me facilita el manejo de mis productos y clientes."</p>
+                                <footer class="blockquote-footer">Juan Pérez</footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <blockquote class="blockquote">
+                                <p>"Un sistema completo y fácil de usar. ¡Muy recomendado!"</p>
+                                <footer class="blockquote-footer">Ana García</footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <blockquote class="blockquote">
+                                <p>"El soporte técnico siempre está disponible cuando lo necesito."</p>
+                                <footer class="blockquote-footer">Carlos Ruiz</footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section class="contact-section bg-light">
+        <div class="container">
+            <h2>Contacto</h2>
+            <p>Si tienes preguntas, no dudes en ponerte en contacto con nosotros.</p>
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Mensaje</label>
+                    <textarea class="form-control" id="message" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-dark">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Pie de Página -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Todos los derechos reservados.</p>
+            <div>
+                <a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5/1hW2D5f8R8qfYhpyEN1/iPQbViQGQF15u5y5b5V" crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+

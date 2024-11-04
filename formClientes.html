@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Formulario Clientes</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f3f4f6;
+            color: #333333;
+        }
+
+        .navbar {
+            background-color: #2c3e50;
+            padding: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand,
+        .nav-link {
+            color: #ecf0f1 !important;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #1abc9c !important;
+        }
+
+        .container {
+            margin-top: 2rem;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #34495e;
+        }
+
+        .form-label {
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background-color: #1abc9c;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 8px rgba(26, 188, 156, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: #16a085;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+
+        .bg-light {
+            background-color: #ffffff !important;
+        }
+
+        .rounded {
+            border-radius: 0.5rem;
+        }
+
+        .shadow-sm {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer {
+            margin-top: 2rem;
+            padding: 1rem 0;
+            text-align: center;
+            background-color: #2c3e50;
+            color: #bdc3c7;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="container">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="#">Menú</a>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="clientes.html" aria-current="page">Clientes</a>
+                        <a class="nav-link" href="productos.html">Productos</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="container mt-5 p-4 bg-light rounded shadow-sm">
+        <div class="row align-items-center mb-4">
+            <h2 class="section-title">Formulario Clientes</h2>
+        </div>
+        <div class="row">
+            <form class="p-3" onsubmit="" method="POST">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="nombres-n" class="form-label">Nombres</label>
+                        <input type="text" class="form-control" name="nombres-n" id="nombres-n"
+                            placeholder="Ingrese nombres">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="apellidos-a" class="form-label">Apellidos</label>
+                        <input type="text" class="form-control" name="apellidos-a" id="apellidos-a"
+                            placeholder="Ingrese apellidos">
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="documento-d" class="form-label">Documento</label>
+                        <input type="number" class="form-control" name="documento-d" id="documento-d"
+                            placeholder="Número de documento">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="correo-c" class="form-label">Correo</label>
+                        <input type="email" class="form-control" name="correo-c" id="correo-c"
+                            placeholder="correo@ejemplo.com">
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="telefono-t" class="form-label">Teléfono</label>
+                        <input type="tel" class="form-control" name="telefono-t" id="telefono-t"
+                            placeholder="Número de teléfono">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="direccion-d" class="form-label">Dirección</label>
+                        <input type="text" class="form-control" name="direccion-d" id="direccion-d"
+                            placeholder="Ingrese dirección">
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button type="button" class="btn btn-primary me-2" onclick="guardarClientes()">Crear</button>
+                    <button type="button" class="btn btn-secondary" id="btn-editar">Editar</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2024 Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/request.js"></script>
+    <script src="js/clientes.js"></script>
+    <script>
+        window.onload = function () {
+            let boton = document.getElementById('btn-editar');
+            const url = new URLSearchParams(window.location.search);
+            cargarDatos(url.get('id'));
+            boton.onclick = () => {
+                modificarCliente(url.get('id'));
+            }
+        }
+    </script>
+</body>
+
+</html>
